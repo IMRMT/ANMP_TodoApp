@@ -9,6 +9,10 @@ android {
     namespace = "com.ubaya.todoapp"
     compileSdk = 34
 
+    buildFeatures{
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId = "com.ubaya.todoapp"
         minSdk = 34

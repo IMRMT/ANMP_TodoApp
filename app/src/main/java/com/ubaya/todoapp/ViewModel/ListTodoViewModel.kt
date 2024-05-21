@@ -5,6 +5,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import com.ubaya.todoapp.Model.Todo
 import com.ubaya.todoapp.Model.TodoDatabase
+import com.ubaya.todoapp.Util.buildDb
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -34,7 +35,7 @@ class ListTodoViewModel(application: Application): AndroidViewModel(application)
 
     fun checkTask(todo: Todo){
         launch {
-            val db = TodoDatabase.buildDatabase(getApplication())
+            val db = buildDb(getApplication())
             db.todoDao().deleteTodo(todo)
             todoLD.postValue(db.todoDao().selectAllTodo())
         }
