@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="25dp"
             android:tag="@{todo.uuid}"
-            android:onClick="@{(v)-> editlistener.onTodoEditClick(v)"
+            android:onClick="@{editlistener::onTodoEditClick"
             app:layout_constraintBottom_toBottomOf="@+id/checkTask"
             app:layout_constraintEnd_toEndOf="@+id/checkTask"
             app:layout_constraintTop_toTopOf="@+id/checkTask"
