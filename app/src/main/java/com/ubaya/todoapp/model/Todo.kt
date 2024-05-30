@@ -1,4 +1,4 @@
-package com.ubaya.todoapp.Model
+package com.ubaya.todoapp.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

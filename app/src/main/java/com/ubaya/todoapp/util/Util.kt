@@ -1,9 +1,9 @@
-package com.ubaya.todoapp.Util
+package com.ubaya.todoapp.util
 
 import android.content.Context
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
-import com.ubaya.todoapp.Model.TodoDatabase
+import com.ubaya.todoapp.model.TodoDatabase
 
 val DB_NAME = "newtododb"
 

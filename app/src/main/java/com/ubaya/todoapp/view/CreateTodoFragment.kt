@@ -1,4 +1,4 @@
-package com.ubaya.todoapp.View
+package com.ubaya.todoapp.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,9 +9,8 @@ import android.widget.RadioButton
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
-import com.ubaya.todoapp.Model.Todo
-import com.ubaya.todoapp.R
-import com.ubaya.todoapp.ViewModel.DetailTodoViewModel
+import com.ubaya.todoapp.model.Todo
+import com.ubaya.todoapp.viewModel.DetailTodoViewModel
 import com.ubaya.todoapp.databinding.FragmentCreateTodoBinding
 
 class CreateTodoFragment : Fragment() {

@@ -1,4 +1,4 @@
-package com.ubaya.todoapp.View
+package com.ubaya.todoapp.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
