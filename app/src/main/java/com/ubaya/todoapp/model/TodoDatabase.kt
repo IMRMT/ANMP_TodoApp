@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.ubaya.todoapp.util.DB_NAME
-import com.ubaya.todoapp.util.MIGRATION_1_2
+import com.ubaya.todoapp.util.MIGRATION_1_3
 
 @Database(entities = arrayOf(Todo::class), version = 2)//harus didaftarkan di build database
 abstract class TodoDatabase:RoomDatabase() {
@@ -17,7 +17,7 @@ abstract class TodoDatabase:RoomDatabase() {
 
         fun buildDatabase(context: Context) = Room.databaseBuilder(
             context.applicationContext, TodoDatabase::class.java, DB_NAME
-        )   .addMigrations(MIGRATION_1_2)
+        )   .addMigrations(MIGRATION_1_3)
             .build()
 
         operator fun invoke(context: Context){
