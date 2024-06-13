@@ -11,7 +11,7 @@ import androidx.room.Update
 interface TodoDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAll(vararg todo: Todo)
-    @Query("Select * from todo ORDER BY priority DESC")
+    @Query("Select * from todo WHERE isDone = 0 ORDER BY priority DESC")
     fun selectAllTodo(): List<Todo>
     @Query("Select * from todo where uuid= :id")
     fun selectTodo(id:Int): Todo
@@ -19,6 +19,8 @@ interface TodoDao {
     fun deleteTodo(todo: Todo)
     @Query("UPDATE todo SET title=:title, notes=:notes, priority=:priority WHERE uuid=:uuid")
     fun update(title: String, notes: String, priority: Int, uuid: Int)
+    @Query("UPDATE todo SET isDone=1 where uuid =:uuid")
+    fun updateisDone(uuid: Int)
     @Update
     fun updateTodo(todo: Todo)
 }

@@ -15,7 +15,7 @@ import com.ubaya.todoapp.databinding.FragmentTodoListBinding
 
 class TodoListFragment : Fragment() {
     private lateinit var binding:FragmentTodoListBinding
-    private val adapter =  TodoListAdapter(arrayListOf(), {todo -> viewModel.checkTask(todo)})
+    private val adapter =  TodoListAdapter(arrayListOf(), {todo -> viewModel.isDone(todo.uuid)})
     private lateinit var viewModel: ListTodoViewModel
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

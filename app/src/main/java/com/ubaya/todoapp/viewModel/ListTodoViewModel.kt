@@ -10,6 +10,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
+import java.util.UUID
 import kotlin.coroutines.CoroutineContext
 
 class ListTodoViewModel(application: Application): AndroidViewModel(application), CoroutineScope {
@@ -36,7 +37,15 @@ class ListTodoViewModel(application: Application): AndroidViewModel(application)
     fun checkTask(todo: Todo){
         launch {
             val db = buildDb(getApplication())
-            db.todoDao().deleteTodo(todo)
+//            db.todoDao().deleteTodo(todo)
+            todoLD.postValue(db.todoDao().selectAllTodo())
+        }
+    }
+
+    fun isDone(uuid: Int){
+        launch {
+            val db = buildDb(getApplication())
+            db.todoDao().updateisDone(uuid)
             todoLD.postValue(db.todoDao().selectAllTodo())
         }
     }
